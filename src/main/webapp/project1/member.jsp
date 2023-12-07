@@ -15,7 +15,7 @@
         .result-item {
             margin-bottom: 15px;
             padding: 10px;
-            background-color: #f0f0f0;
+            background-color: #f0f0ff;
             border-radius: 4px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
