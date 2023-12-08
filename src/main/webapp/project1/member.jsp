@@ -9,9 +9,9 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-</head>
+</head> <body>
 <style>
-   
+  
         .result-item {
             margin-bottom: 15px;
             padding: 10px;

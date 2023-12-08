@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%><!DOCTYPE html>
     <body>
     <%@ include  file="header.jsp" %>    
-     
+      
         <!-- Section-->    
       <div><br><br><br>
         <form action="member.jsp" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">                                                                                     
