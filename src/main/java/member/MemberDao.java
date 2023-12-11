@@ -39,9 +39,7 @@ public class MemberDao {
 		         pstmt.setString(5,member.getEmail());
 		         pstmt.setString(6,member.getTel());
 		         //4)excute
-		         int num = pstmt.executeUpdate();
-		         System.out.println(num+"==============");
-		         conn.commit();
+		         int num = pstmt.executeUpdate();		         		     
 		         return num;
 		                  
 		   }
