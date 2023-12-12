@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-   <link href="../project1/css/login.css" rel="stylesheet" />
+   
         <section>  
 
 <body>
