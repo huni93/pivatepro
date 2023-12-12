@@ -4,7 +4,10 @@ import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+
 
 public class MemberDao {
 		   public Connection getConnection() {
@@ -30,18 +33,39 @@ public class MemberDao {
 		      Connection conn = getConnection();
 		          
 		         PreparedStatement pstmt = conn.prepareStatement("insert into member "
-		        		  + "values (?,?,?,?,?,?, null)");
+		        		  + "values (?,?,?,?,?,?,?)");
 		         //mapping
 		         pstmt.setString(1,member.getId());
 		         pstmt.setString(2,member.getPassword());
-		         pstmt.setString(3,member.getCheak());
+		         pstmt.setString(3,member.getPassCheck());
 		         pstmt.setString(4,member.getName());
 		         pstmt.setString(5,member.getEmail());
-		         pstmt.setString(6,member.getTel());
+		         pstmt.setString(6,member.getNickname());
+		         pstmt.setString(7,member.getTel());
 		         //4)excute
 		         int num = pstmt.executeUpdate();		         		     
 		         return num;
 		                  
 		   }
-		}// class end
-
+	
+public Member oneMember(String id) throws SQLException {
+	  
+Connection conn = getConnection();             
+PreparedStatement pstmt = conn.prepareStatement("select*from member where id =?");
+pstmt.setString(1,id);
+ResultSet rs = pstmt.executeQuery();
+if(rs.next()) {
+  
+  Member m = new Member();
+  m.setId(rs.getString("id"));
+  m.setPassword(rs.getString("password"));
+  m.setPassCheck(rs.getString("passcheck"));
+  m.setName(rs.getString("name"));
+  m.setEmail(rs.getString("email"));
+  m.setNickname(rs.getString("nickname"));
+  m.setTel(rs.getString("tel"));
+  return m;
+}
+return null;
+     }
+	}// class end

@@ -11,7 +11,9 @@
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../project1/css/styles.css" rel="stylesheet" />
+          <link href="../project1/css/board.css" rel="stylesheet" />
+           <link href="../project1/css/memberform.css" rel="stylesheet" />
     
     </head>
     <body>
@@ -24,16 +26,19 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.jsp">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="board.jsp">게시판</a></li>
-						 <li class="nav-item"><a class="nav-link" href="login.jsp">로그인</a></li>
-						 <li class="nav-item"><a class="nav-link" href="memberform.jsp">회원가입</a></li>
+                        <%
+
+String login = (String)session.getAttribute("id");
+if(login==null) {
+	
+%>
+						 <li class="nav-item"><a class="nav-link" href="loginForm.jsp">로그인</a></li>
+						 <li class="nav-item"><a class="nav-link" href="MemberInput.jsp">회원가입</a></li>
+						 <%}else{ %>
+						 <li class="nav-item"><a class="nav-link" href="memberinfo.jsp">회원정보</a></li>
+						 <li class="nav-item"><a class="nav-link" href="memberlogout.jsp">로그아웃</a></li>
+						  <%} %>
                             </ul>                   
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
-                    </form>
                 </div>
             </div>
         </nav>
@@ -41,16 +46,9 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    <h1 class="display-4 fw-bolder">Shop in style</h1>                    
                 </div>
             </div>
         </header>
        
-        
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+   

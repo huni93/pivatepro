@@ -14,14 +14,14 @@ Member member = new Member();
 request.setCharacterEncoding("utf-8");
 String id = request.getParameter("id");
 String password = request.getParameter("password");
-String cheak = request.getParameter("cheak");
+String passcheck = request.getParameter("passcheck");
 String name = request.getParameter("name");
 String email = request.getParameter("email") ;
 String nickname = request.getParameter("nickname");
 String tel = request.getParameter("tel");
 member.setId(id);
 member.setPassword(password);
-member.setCheak(cheak);
+member.setPassCheck(passcheck);
 member.setName(name);
 member.setEmail(email);
 member.setNickname(nickname);
@@ -30,6 +30,7 @@ member.setTel(tel);
 
 MemberDao md = new MemberDao();
 int num = md.insertMember(member);
-%><%=num %>
+response.sendRedirect(request.getContextPath()+"/member/loginForm.jsp");
+%>
 </body>
 </html>

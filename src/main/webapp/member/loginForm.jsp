@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+   <link href="../project1/css/login.css" rel="stylesheet" />
+        <section>  
+
+<body>
+  <div class="main" >
+    <p class="sign" align="center">login</p>
+    <form class="form1"  action="loginPro.jsp">
+      <input class="un " type="text" align="center" placeholder="Username"  name="id">
+      <input class="pass" type="password" align="center" placeholder="Password"  name="password">
+      <input type="submit"  class="submit" value="login">
+      <p class="forgot" align="center"><a href="#">Forgot Password?</p>
+        </form>    
+                
+    </div>
+     
+</body>
+
+</section>
+</html>

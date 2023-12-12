@@ -3,7 +3,7 @@ package member;
 public class Member {
 	private String id;
 	private String password;
-	private String cheak;
+	private String passcheck;
 	private String name;
 	private String email;
 	private String nickname;
@@ -20,11 +20,11 @@ public class Member {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getCheak() {
-		return cheak;
+	public String getPassCheck() {
+		return passcheck;
 	}
-	public void setCheak(String cheak) {
-		this.cheak = cheak;
+	public void setPassCheck(String passcheck) {
+		this.passcheck = passcheck;
 	}
 	public String getName() {
 		return name;
@@ -52,7 +52,7 @@ public class Member {
 	}
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", password=" + password + ", cheak=" + cheak + ", name=" + name + ", email="
+		return "Member [id=" + id + ", password=" + password + ", passcheck=" + passcheck + ", name=" + name + ", email="
 				+ email + ", nickname=" + nickname + ", tel=" + tel + "]";
 	}
 	
