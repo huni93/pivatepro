@@ -68,4 +68,42 @@ if(rs.next()) {
 }
 return null;
      }
-	}// class end
+public int updateMember(Member member) throws UnsupportedEncodingException, SQLException {
+  Connection conn = getConnection();
+  String sql = "update member set name=?,nickname=?,tel=?,email=? where id =?"; 
+     PreparedStatement pstmt = conn.prepareStatement(sql);
+     //mapping
+     pstmt.setString(1,member.getName());
+     pstmt.setString(2,member.getNickname());
+     pstmt.setString(3,member.getTel());
+     pstmt.setString(4,member.getEmail());
+     pstmt.setString(5,member.getId());     
+     //4)excute
+     int num = pstmt.executeUpdate();		         		     
+     return num;
+              
+}
+
+public int deleteMember(String id) throws UnsupportedEncodingException, SQLException {
+	  Connection conn = getConnection();
+	  String sql = "delete member where id =?"; 
+	     PreparedStatement pstmt = conn.prepareStatement(sql);
+	     //mapping
+	     pstmt.setString(1,id);     
+	     //4)excute
+	     int num = pstmt.executeUpdate();		         		     
+	     return num;
+	}
+
+public int passMember(String id,String chgpass) throws UnsupportedEncodingException, SQLException {
+	  Connection conn = getConnection();
+	  String sql = "update member set password=? where id =?"; 
+	     PreparedStatement pstmt = conn.prepareStatement(sql);
+	     //mapping
+	     pstmt.setString(1,chgpass);
+	     pstmt.setString(2,id);     
+	     //4)excute
+	     int num = pstmt.executeUpdate();		         		     
+	     return num;
+	}
+}// class end

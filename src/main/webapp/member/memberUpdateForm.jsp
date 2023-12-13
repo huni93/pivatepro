@@ -1,35 +1,44 @@
 
+<%@page import="member.Member"%>
+<%@page import="member.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%><!DOCTYPE html>
+    
+<%
+MemberDao md = new MemberDao();
+Member mem = md.oneMember(login);
+%> 
+    
     <body>  
       
         <!-- Section-->    
       <div><br><br><br>
-        <form action="memberPro.jsp" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">                                                                                     
-      <h2>회원가입</h2>
+        <form action="memberUpdatePro.jsp" method="POST" class="joinForm" onsubmit="DoJoinForm__submit(this); return false;">                                                                                     
+      <h2>회원정보수정</h2>
       <div class="textForm">
-        <input  type="text" class="id" placeholder="아이디" name="id">
-      
+        <input  type="text" class="id" placeholder="아이디" name="id" readonly
+        value="<%=mem.getId() %>">   
       </div>
       <div class="textForm">
         <input  type="password" class="pw" placeholder="비밀번호" name="password">
       </div>
-       <div class="textForm">
-        <input  type="password" class="pw" placeholder="비밀번호 확인" name="passcheck">
-      </div>
       <div class="textForm">
-        <input  type="text" class="name" placeholder="이름" name="name">
+        <input  type="text" class="name" placeholder="이름" name="name"
+        value="<%=mem.getName() %>">
       </div>
        <div class="textForm">
-        <input  type="text" class="email" placeholder="이메일" name= "email">
+        <input  type="text" class="email" placeholder="이메일" name= "email"
+        value="<%=mem.getEmail() %>">
       </div>
       <div class="textForm">
-        <input  type="text" class="nickname" placeholder="닉네임" name="nickname">
+        <input  type="text" class="nickname" placeholder="닉네임" name="nickname"
+        value="<%=mem.getNickname() %>">
       </div>
       <div class="textForm">
-        <input  type="number" class="cellphoneNo" placeholder="전화번호" name="tel">
+        <input  type="number" class="cellphoneNo" placeholder="전화번호" name="tel"
+        value="<%=mem.getTel() %>">
       </div>
-      <input type="submit" class="btn" value="J O I N"/>
+      <input type="submit" class="btn" value="회원정보수정"/>
     </form> 
     </div>
  <br><br><br><br><br><br><br><br><p>

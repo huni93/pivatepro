@@ -32,9 +32,9 @@ Member member = md.oneMember(login);
              <a class="btn btn-primary"    
              href="${pageContext.request.contextPath}/member/memberUpdateForm.jsp">회원정보수정</a>
              <a class="btn btn-primary" 
-             href="${pageContext.request.contextPath}/member/memberDelete.jsp">회원탈퇴</a>
+             href="${pageContext.request.contextPath}/member/memberDeleteForm.jsp">회원탈퇴</a>
              <a class="btn btn-primary" 
-             href="${pageContext.request.contextPath}/member/memberPassUpdate.jsp">비밀번호수정</a>
+             href="${pageContext.request.contextPath}/member/memberPassForm.jsp">비밀번호수정</a>
            </td>
            </tr>
             </table>
