@@ -97,7 +97,7 @@ body {
 
 .btn {
   position:relative;
-  left:40%;
+  left:50%;
   transform: translateX(-50%);
   margin-bottom: 40px;
   width:80%;
